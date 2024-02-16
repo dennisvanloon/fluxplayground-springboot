@@ -7,8 +7,6 @@ import io.fluxcapacitor.javaclient.modeling.Entity;
 import io.fluxcapacitor.javaclient.tracking.handling.HandleCommand;
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
-
 @Component
 public class GameCommandHandler {
 

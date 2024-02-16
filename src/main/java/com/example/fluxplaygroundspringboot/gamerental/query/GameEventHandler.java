@@ -10,9 +10,18 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class GameEventHandler {
+
+    private final GamesRepository gamesRepository;
+
+    public GameEventHandler(GamesRepository gamesRepository) {
+        this.gamesRepository = gamesRepository;
+    }
+
     @HandleEvent
     void handle(GameCreatedEvent gameCreatedEvent) {
         log.info("Handling the gameCreatedEvent");
+        gamesRepository.save(Game.builder().gameId(gameCreatedEvent.getGameId()).build());
+        gamesRepository.count();
     }
 
     @HandleEvent

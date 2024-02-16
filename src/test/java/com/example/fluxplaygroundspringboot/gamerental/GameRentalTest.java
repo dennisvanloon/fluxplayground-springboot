@@ -17,7 +17,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class GameRentalTest {
 
-    private final TestFixture testFixture = TestFixture.create(new GameCommandHandler(), new GameEventHandler());
+    //TODO proper mock for ES
+    //TODO Update a few tests to use 'satisfies'
+    private final TestFixture testFixture = TestFixture.create(new GameCommandHandler(), new GameEventHandler(null));
 
     @Test
     void testCreateGame() {
